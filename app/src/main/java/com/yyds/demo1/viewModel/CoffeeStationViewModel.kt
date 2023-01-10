@@ -3,9 +3,7 @@ package com.yyds.demo1.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.yyds.demo1.enums.EnumCoffeeType
-import com.yyds.demo1.model.Coffee
-import com.yyds.demo1.model.CoffeeStation
+import com.yyds.demo1.strategyPatternModel.Coffee
 
 class CoffeeStationViewModel : ViewModel(){
 
@@ -61,8 +59,8 @@ class CoffeeStationViewModel : ViewModel(){
         _isCold.value = true
     }
 
-    fun generateResult(coffee:Coffee){
-        _result.value = CoffeeStation().generateCoffee(coffee)
+    fun generateResult(coffee: Coffee){
+        _result.value = coffee.strategyCoffee()
     }
 }
 
