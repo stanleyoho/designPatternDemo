@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">YYDS_Demo1</string>
+    <string name="americano">AMERICANO</string>
+    <string name="cappuccino">CAPPUCCINO</string>
+    <string name="mocha">MOCHA</string>
+    <string name="hot">Hot</string>
+    <string name="ice">Ice</string>
+    <string name="generateCoffee">Generate Coffee</string>
+</resources>
