@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.yyds.demo1.R
+import com.yyds.demo1.context.Coffee
 import com.yyds.demo1.databinding.ActivityMainBinding
+import com.yyds.demo1.models.*
+import com.yyds.demo1.strategys.CoffeeStrategy
+import com.yyds.demo1.strategys.TemperatureStrategy
 import com.yyds.demo1.viewModel.CoffeeStationViewModel
-import com.yyds.demo1.strategyPatternModel.Coffee
-import com.yyds.demo1.strategyPatternModel.items.*
-import com.yyds.demo1.strategyPatternModel.strategy.CoffeeStrategy
-import com.yyds.demo1.strategyPatternModel.strategy.TemperatureStrategy
 
 class MainActivity : AppCompatActivity() {
 

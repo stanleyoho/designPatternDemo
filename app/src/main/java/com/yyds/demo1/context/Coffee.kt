@@ -1,7 +1,7 @@
-package com.yyds.demo1.strategyPatternModel
+package com.yyds.demo1.context
 
-import com.yyds.demo1.strategyPatternModel.strategy.CoffeeStrategy
-import com.yyds.demo1.strategyPatternModel.strategy.TemperatureStrategy
+import com.yyds.demo1.strategys.CoffeeStrategy
+import com.yyds.demo1.strategys.TemperatureStrategy
 
 class Coffee(val strategy: CoffeeStrategy, val temperatureStrategy: TemperatureStrategy) {
 

@@ -3,7 +3,7 @@ package com.yyds.demo1.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.yyds.demo1.strategyPatternModel.Coffee
+import com.yyds.demo1.context.Coffee
 
 class CoffeeStationViewModel : ViewModel(){
 

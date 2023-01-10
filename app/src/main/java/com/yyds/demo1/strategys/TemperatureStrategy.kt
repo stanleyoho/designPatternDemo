@@ -1,4 +1,4 @@
-package com.yyds.demo1.strategyPatternModel.strategy
+package com.yyds.demo1.strategys
 
 interface TemperatureStrategy {
 
