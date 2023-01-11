@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yyds.demo1.context.Coffee
+import com.yyds.demo1.models.*
+import com.yyds.demo1.strategys.CoffeeStrategy
+import com.yyds.demo1.strategys.TemperatureStrategy
 
 class CoffeeStationViewModel : ViewModel(){
 
@@ -31,35 +34,43 @@ class CoffeeStationViewModel : ViewModel(){
     val result : LiveData<String>
         get() = _result
 
+    var strategy : CoffeeStrategy? = null
+    var temperatureStrategy: TemperatureStrategy? = null
     fun selectAmericano(){
+        strategy = Americano()
         _isSelectedAmericano.value = true
         _isSelectedCappuccino.value = false
         _isSelectedMocha.value = false
     }
 
     fun selectCappuccino(){
+        strategy = Cappuccino()
         _isSelectedAmericano.value = false
         _isSelectedCappuccino.value = true
         _isSelectedMocha.value = false
     }
 
     fun selectMocha(){
+        strategy = Mocha()
         _isSelectedAmericano.value = false
         _isSelectedCappuccino.value = false
         _isSelectedMocha.value = true
     }
 
     fun selectHot(){
+        temperatureStrategy = Hot()
         _isHot.value = true
         _isCold.value = false
     }
 
     fun selectIce(){
+        temperatureStrategy = Ice()
         _isHot.value = false
         _isCold.value = true
     }
 
-    fun generateResult(coffee: Coffee){
+    fun generateResult(){
+        val coffee = Coffee(strategy,temperatureStrategy)
         _result.value = coffee.strategyCoffee()
     }
 }
