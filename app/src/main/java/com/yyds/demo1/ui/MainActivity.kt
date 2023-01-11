@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.yyds.demo1.R
 import com.yyds.demo1.databinding.ActivityMainBinding
 import com.yyds.demo1.viewModel.CoffeeStationViewModel
+import com.yyds.mylibrary.MyLogUtils
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.coffeeModel = coffeeViewModel
@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnGenerateCoffee.setOnClickListener {
             coffeeViewModel.generateResult()
         }
+
+        MyLogUtils().logDebug()
     }
 
     private val myCoffeeCheckChangeListener = RadioGroup.OnCheckedChangeListener { p0, p1 ->
